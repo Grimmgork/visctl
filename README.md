@@ -17,7 +17,7 @@ POST          /switch/[templatename]
 ## Setup:
 
 insert *config.json* file in the directory:
-(redirects dont work yet ...)
+(redirects and the apikey dont work yet ...)
 ```
 {
 	"port": "PORT",
