@@ -32,16 +32,18 @@ insert *config.json* file in the directory:
 
 the templates directory:
 ```
-📁templateA
-	📜index.html
-	🖼gif.gif
-📁templateB
-	📜index.html
-	🖼gif.gif
-📁templateC
-	📜index.html
-	🖼gif.gif
-	🖼gifb.gif
+📁templatename
+	index.html
+	gif.gif
+📁templatename
+	index.html
+	mov.mov
+📁templatename
+	index.html
+	gif.gif
+	image.png
 ```
+
+
 
 *be water my friends!*
