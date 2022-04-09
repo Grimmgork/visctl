@@ -10,7 +10,8 @@ I use it to display *aesthetic* gifs and videos on a CRT monitor.
 GET           /view
 GET           /templates
 GET           /templates/[templatename]/resource
-GET, POST     /switch/[templatename]
+GET           /switch
+POST          /switch/[templatename]
 ```
 
 ## Setup:
