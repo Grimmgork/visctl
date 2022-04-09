@@ -3,3 +3,4 @@ templates/*
 !templates/static
 !templates/static/*
 config.json
+state.json

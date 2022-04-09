@@ -13,4 +13,35 @@ GET           /templates/[templatename]/resource
 GET, POST     /switch/[templatename]
 ```
 
+## Setup:
+
+insert *config.json* file in the directory:
+(redirects dont work yet ...)
+```
+{
+	"port": "PORT",
+	"wssPort": "PORT",
+	"masterapikey": "MASTERAPIKEY",
+	"templates": "./templates",
+	"redirects": {
+		"/redirect": "/redirect/redirect.html",
+		"/redirect": "/redirect/redirect.html",
+	}
+}
+```
+
+the templates directory:
+```
+📁templateA
+	📜index.html
+	🖼gif.gif
+📁templateB
+	📜index.html
+	🖼gif.gif
+📁templateC
+	📜index.html
+	🖼gif.gif
+	🖼gifb.gif
+```
+
 *be water my friends!*
