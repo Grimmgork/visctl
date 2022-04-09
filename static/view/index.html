@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		body {
+			background-color: black;
+		}
+
+		iframe {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: transparent;
+		}
+	</style>
+	<body>
+		<iframe id="contentiframe" src='' frameborder="0"> </iframe>
+		<iframe id="transitioniframe" src='/public/templates/static/index.html' frameborder="0" ></iframe>
+		<script>
+			const displayname = '{DISPLAYNAME}';
+			const wssport = {WEBSOCKETPORT};
+
+			const transitionif = document.getElementById("transitioniframe");
+			const contentif = document.getElementById("contentiframe");
+    			const ws = new WebSocket(`ws://${location.hostname}:${wssport}`);
+			
+			ws.onmessage = (message) => {
+				SwitchContent(`/templates/${message.data}`, 500);
+			}
+
+			ws.onopen = () => {
+				ws.send(displayname);
+			};
+
+			function SwitchContent(content, minTransitionTime){
+				transitionif.style.visibility = "visible";
+				contentif.style.visibility = "hidden";
+				setTimeout(function(){
+					contentif.src = content;
+					contentif.style.visibility = "visible";
+					transitionif.style.visibility = "hidden";
+				}, minTransitionTime);
+			}
+		</script>
+	</body>
+</html>
