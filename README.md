@@ -45,6 +45,4 @@ the templates directory:
 	image.png
 ```
 
-
-
 *be water my friends!*

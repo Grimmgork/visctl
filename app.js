@@ -5,13 +5,12 @@ const favicon = require('serve-favicon');
 const mime = require('mime-types');
 
 const vbk = require('./view');
-const config = require('./config.json');
 
+const config = require(process.argv[2] || './config.json');
 
 let app = express();
 
-let state = LoadState();
-vbk.SwitchContent(state.template);
+vbk.SwitchContent(config.defaultTemplate);
 
 app.use(favicon('./static/favicon.ico'));
 app.use(TemplateManager);
@@ -36,7 +35,6 @@ function TemplateManager (req, res, next){
 							return 0;
 						if(bd)
 							return 1;
-						
 						return -1;
 					}));
 					return;
@@ -75,24 +73,6 @@ function GetSubdirectories(dir){
 	return fs.readdirSync(dir).filter((f) => fs.lstatSync(pth.join(dir, f)).isDirectory());
 }
 
-function ReadFileFromRoot(root, path){
-	let fullPath = pth.join(root, pth.normalize(path)); 
-	return fs.readFileSync(fullPath);
-}
-
-function LoadState(){
-	const path = './state.json';
-	if(!fs.existsSync(path)){
-		return {template: null}
-	}
-	return require(path);
-}
-
-function SaveState(state){
-	fs.writeFile('./state.json', JSON.stringify(state), function(){});
-}
-
-
 app.get('/view', function(req, res){
 	let content = fs.readFileSync('./static/view/index.html');
 	content = content.toString().replaceAll('{WEBSOCKETPORT}', config.wssPort);
@@ -111,9 +91,6 @@ app.post('/switch/:templatename', function(req, res){
 	}
 
 	vbk.SwitchContent(templatename);
-	state.template = vbk.GetContent();
-	SaveState(state);
-
 	res.send();
 });
 
