@@ -1,6 +1,6 @@
 node_modules/
 templates/*
-!templates/static
-!templates/static/*
+!templates/noise
+!templates/noise/*
 config.json
 state.json

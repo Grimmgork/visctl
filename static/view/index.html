@@ -16,7 +16,7 @@
 	</style>
 	<body>
 		<iframe id="contentiframe" src='' frameborder="0"> </iframe>
-		<iframe id="transitioniframe" src='/public/templates/static/index.html' frameborder="0" ></iframe>
+		<iframe id="transitioniframe" src='/templates/noise/index.html' frameborder="0" ></iframe>
 		<script>
 			const displayname = '{DISPLAYNAME}';
 			const wssport = {WEBSOCKETPORT};
@@ -26,7 +26,7 @@
     			const ws = new WebSocket(`ws://${location.hostname}:${wssport}`);
 			
 			ws.onmessage = (message) => {
-				SwitchContent(`/templates/${message.data}`, 500);
+				SwitchContent(`/templates/${message.data}/index.html`, 500);
 			}
 
 			ws.onopen = () => {
