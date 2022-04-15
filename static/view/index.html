@@ -16,31 +16,19 @@
 	</style>
 	<body>
 		<iframe id="contentiframe" src='' frameborder="0"> </iframe>
-		<iframe id="transitioniframe" src='/templates/noise/index.html' frameborder="0" ></iframe>
 		<script>
-			const displayname = '{DISPLAYNAME}';
 			const wssport = {WEBSOCKETPORT};
 
-			const transitionif = document.getElementById("transitioniframe");
 			const contentif = document.getElementById("contentiframe");
     			const ws = new WebSocket(`ws://${location.hostname}:${wssport}`);
 			
 			ws.onmessage = (message) => {
-				SwitchContent(`/templates/${message.data}/index.html`, 500);
+				let url = `/templates/${message.data}/index.html`;
+				SwitchContent(url);
 			}
 
-			ws.onopen = () => {
-				ws.send(displayname);
-			};
-
-			function SwitchContent(content, minTransitionTime){
-				transitionif.style.visibility = "visible";
-				contentif.style.visibility = "hidden";
-				setTimeout(function(){
-					contentif.src = content;
-					contentif.style.visibility = "visible";
-					transitionif.style.visibility = "hidden";
-				}, minTransitionTime);
+			function SwitchContent(url){
+				contentif.src = url;
 			}
 		</script>
 	</body>

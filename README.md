@@ -9,7 +9,9 @@ I use it to display *aesthetic* gifs and videos on a CRT monitor.
 ```
 GET           /view
 GET           /templates
-GET           /templates/[templatename]/resource
+GET           /templates/[templatename]/[resource]
+POST          /templates/[templatename]/[resource]
+DELETE        /templates/[templatename]/[resource]
 GET           /switch
 POST          /switch/[templatename]
 ```
@@ -17,32 +19,32 @@ POST          /switch/[templatename]
 ## Setup:
 
 insert *config.json* file in the directory:
-(redirects and the apikey dont work yet ...)
+(the api-key does not work yet ...)
 ```
 {
 	"port": "PORT",
-	"wssPort": "PORT",
-	"masterapikey": "MASTERAPIKEY",
-	"templates": "./templates",
-	"redirects": {
-		"/redirect": "/redirect/redirect.html",
-		"/redirect": "/redirect/redirect.html",
-	}
+	"wssPort": "Websocket-PORT",
+	"masterapikey": "KEY",
+	"defaultTemplate": "static",
+	"templateDirectory": "./templates"
 }
 ```
 
-the templates directory:
+## Templates:
+All templates must be held in the "templateDirectory" folder specified in the config file.
+Every Template must have a index.html in its root directory:
 ```
-📁templatename
-	index.html
-	gif.gif
-📁templatename
-	index.html
-	mov.mov
-📁templatename
-	index.html
-	gif.gif
-	image.png
+📂templates
+   📁templatename
+      📄index.html
+      📄gif.gif
+   📁templatename
+      📄index.html
+      📄mov.mov
+   📁templatename
+      📄index.html
+      📄gif.gif
+      📄image.png
 ```
 
 *be water my friends!*
