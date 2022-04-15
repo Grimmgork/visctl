@@ -91,7 +91,7 @@ app.get('/switch', function(req, res){
 
 app.post('/switch/:templatename', function(req, res){
 	const templatename = req.params.templatename;
-	if(GetSubdirectories(config.templates).filter((f) => f == templatename).length == 0){
+	if(GetSubdirectories(config.templateDirectory).filter((f) => f == templatename).length == 0){
 		res.sendStatus(404);
 		return;
 	}
