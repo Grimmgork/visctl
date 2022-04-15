@@ -25,7 +25,7 @@ insert *config.json* file in the directory:
 	"port": "PORT",
 	"wssPort": "Websocket-PORT",
 	"masterapikey": "KEY",
-	"defaultTemplate": "static",
+	"defaultTemplate": "noise",
 	"templateDirectory": "./templates"
 }
 ```
