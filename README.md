@@ -7,7 +7,7 @@ You can have multiple clients but they wont be synchronized exactly.
 So, if you have GIFs or videos on the template they are not guaranteed to start playing exactly at the same time, but
 it works great for synchronizing static content like text or images.
 
-I use it to display *aesthetic* gifs and videos on a CRT monitor.
+I use it to display *aesthetic* gifs on a CRT monitor.
 
 ## Endpoints:
 
