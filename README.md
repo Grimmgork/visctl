@@ -1,16 +1,16 @@
 # visctl
-A webpage wich will display a html-template given by the server.
-You can let the server switch the visuals of the client to a template posting to the /switch[templatename] endpoint.
+A webpage wich will display a html-template given by the server without needing to refresh the page.
+You can let the server switch the visuals of the client to a template by posting to the /switch[templatename] endpoint.
 
 I use it to display *aesthetic* gifs and videos on a CRT monitor.
 
 ## Endpoints:
 
 ```
-GET           /view
-GET           /templates
-GET           /switch
-POST          /switch/[templatename]
+GET           /view                  //the client 
+GET           /templates             //list of all available templates to display on the client
+GET           /switch                //gets the currently selected template of the client
+POST          /switch/[templatename] //switches out the template displayed on the client
 ```
 
 ## Setup:
