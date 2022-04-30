@@ -1,6 +1,6 @@
 # visctl
 A webpage wich will display a html-template given by the server without needing to refresh the page.
-You can let the server switch the visuals of the client to a template by posting to the /switch[templatename] endpoint.
+You can switch the content of the client to a template by posting to the /switch[templatename] endpoint.
 
 You can have multiple clients but they wont be synchronized exactly.
 If you have GIFs or videos on the template-page they are not guaranteed to start playing exactly at the same time but
