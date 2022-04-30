@@ -1,6 +1,6 @@
 # visctl
-
-It is basically a webpage wich visuals can be switched by calling a rest endpoint.
+A webpage wich will display a html-template given by the server.
+You can let the server switch the visuals of the client to a template from the server by  posting to the /switch[templatename] endpoint.
 
 I use it to display *aesthetic* gifs and videos on a CRT monitor.
 
