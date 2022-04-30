@@ -9,9 +9,6 @@ I use it to display *aesthetic* gifs and videos on a CRT monitor.
 ```
 GET           /view
 GET           /templates
-GET           /templates/[templatename]/[resource]
-POST          /templates/[templatename]/[resource]
-DELETE        /templates/[templatename]/[resource]
 GET           /switch
 POST          /switch/[templatename]
 ```
