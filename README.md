@@ -1,19 +1,21 @@
 # visctl
+A webpage wich content can be replaced in real time.
+You can switch the content of the client to a template by posting to the /switch[templatename] endpoint.
+The server will then notify all clients to load another template.
 
-It is basically a webpage wich visuals can be switched by calling a rest endpoint.
+You can have multiple clients but they wont be synchronized exactly.
+So, if you have GIFs or videos on the template they are not guaranteed to start playing exactly at the same time, but
+it works great for synchronizing static content like text or images.
 
-I use it to display *aesthetic* gifs and videos on a CRT monitor.
+I use it to display *aesthetic* gifs on a CRT monitor. 🪐
 
 ## Endpoints:
 
 ```
-GET           /view
-GET           /templates
-GET           /templates/[templatename]/[resource]
-POST          /templates/[templatename]/[resource]
-DELETE        /templates/[templatename]/[resource]
-GET           /switch
-POST          /switch/[templatename]
+GET           /view                  //the client 
+GET           /templates             //list of all available templates to display on the client
+GET           /switch                //gets the currently selected template of the client
+POST          /switch/[templatename] //switches out the template displayed on the client
 ```
 
 ## Setup:
