@@ -19,19 +19,17 @@ POST          /switch/[templatename]
 ## Setup:
 
 insert *config.json* file in the directory:
-(the api-key does not work yet ...)
 ```
 {
 	"port": "PORT",
 	"wssPort": "Websocket-PORT",
-	"masterapikey": "KEY",
 	"defaultTemplate": "noise",
 	"templateDirectory": "./templates"
 }
 ```
 
 ## Templates:
-All templates must be held in the "templateDirectory" folder specified in the config file.
+All templates must be stoired in the "templateDirectory" folder specified in the config file.
 Every Template must have a index.html in its root directory:
 ```
 📂templates

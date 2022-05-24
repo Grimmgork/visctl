@@ -4,7 +4,7 @@ const WebSocket = require('ws');
 let WSSPORT = config.wssPort;
 let content;
 
-const wss = new WebSocket.Server({ port: WSSPORT,  });
+const wss = new WebSocket.Server({ port: WSSPORT });
 const sockets = [];
 
 wss.on('connection', (ws) => {
